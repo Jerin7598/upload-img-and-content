@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>upload contents</title>
+        <style>
+          input {
+              margin-top: 5px;
+          } 
+
+          button {
+            margin-top: 10px;
+          }
+
+          img {
+        width: 250px;
+          }
+
+          .all {
+            display: flex;
+          }
+           .z5 {
+            margin-left: 150px;
+           }
+
+           .text {
+            margin-right: 60px;
+            text-align: justify;
+           }
+           .img {
+            margin-right: 25px;
+           }
+           .z1 {
+            margin-left: 35PX;
+           }
+                      
+           .aa {
+            display: block;
+           }
+        </style>
+    </head>
+
+
+    <body>
+        <div class="all">
+        <div class="z1">
+        <h2>Text here</h2>
+        <textarea id="a1" cols="30" rows="20"></textarea><br>
+        <h2>Image url</h2>
+        <input type="url" id="a2"><br>
+        <button onclick="touch()">upload</button>
+        </div>
+        <div class="z5" id="z5">
+            
+     
+        </div>
+    </div>
+        </body>
+    </body>
+
+    <script>
+        let a=[];
+        let b=[];
+        function touch(){
+          let v=document.getElementById("a1").value;
+          let w=document.getElementById("a2").value;
+            
+            a.push(v);
+            b.push(w);
+
+            let c=""
+            
+              
+              
+            for (let i=0;i<a.length;i++){
+           
+            c=c+"<div class='aa'><div class='all'><p>"+a[i]+"</p>";
+             
+              
+              
+                c=c+"<img src='"+b[i]+"'></div></div>"
+
+                
+            }
+          console.log(c);
+           document.getElementById("z5").innerHTML=c;
+
+                
+        }
+
+
+
+    </script>
+</html>
