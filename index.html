@@ -3,12 +3,34 @@
     <head>
         <title>upload contents</title>
         <style>
+          *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+          }
           input {
-              margin-top: 5px;
+              margin-bottom:20px;
+              margin-top: 2px;
+              background-color: transparent;
+              padding: 5px;
+              border-radius: 5px;
           } 
+          textarea{
+            margin-bottom:20px;
+            margin-top: 2px;
+            background-color: transparent;
+            border-radius: 5px;
+          }
 
           button {
-            margin-top: 10px;
+            margin-top:5px;
+            background-color: transparent;
+            padding: 5px;
+            border-radius: 5px;
+
+          }
+          button:hover{
+            color: blue;
           }
 
           img {
@@ -20,6 +42,9 @@
           }
            .z5 {
             margin-left: 150px;
+            margin-top: 80px;
+            background-color: aquamarine;
+            padding: 20px;
            }
 
            .text {
@@ -30,64 +55,115 @@
             margin-right: 25px;
            }
            .z1 {
-            margin-left: 35PX;
+            margin-left: 100px;
+            margin-top: 70px;
+            background-color: aquamarine;
+            padding: 50px;
+            width: 650px;
+            border-radius: 6px;
+           }
+           .z2{
+            display: flex;
            }
                       
            .aa {
             display: block;
            }
+           .w{
+           margin-left: 100px;
+           margin-top: 30px;
+           }
+           .z5 {
+      display: none;
+      height: 100px;
+    }
         </style>
     </head>
 
 
     <body>
-        <div class="all">
+
+      <div class="all" >
+          
         <div class="z1">
-        <h2>Text here</h2>
-        <textarea id="a1" cols="30" rows="20"></textarea><br>
-        <h2>Image url</h2>
-        <input type="url" id="a2"><br>
-        <button onclick="touch()">upload</button>
+        <div class="z2">
+          <div>
+          <h3>Enter your name</h3>
+          <input type="text" id="a3">
+          <h3>Mobile number</h3>
+          <input type="number" id="a4">
+          <h3>Address</h3>
+          <input type="text" id="a5">
+          <h3>Image url</h3>
+          <input type="url" id="a2"><br>
+          
+          <h3>Text here</h3>
+          <textarea id="a1" cols="20" rows="2"></textarea><br>
+          
+          <button onclick="touch()">Upload</button>
         </div>
+        
+        
+        <div class="w">
+          <img src="c:\Users\BABIN\Downloads\man-working-laptop-computer-from-home-with-cup-coffee-home-office-concept-woman-working-from-home-student-freelancer-vector-illustration-flat-style-remote-work-freelance-concept_419010-517__1_-removeb.png">
+        
+      </div>
+        </div>
+</div>
+    
         <div class="z5" id="z5">
-            
-     
         </div>
-    </div>
-        </body>
-    </body>
+      </div>
+    
+      <script>
+        let a = [];
+        let b = [];
+        let c = [];
+        let d = [];
+        let e = [];
+    
+        function touch() {
+          let v = document.getElementById("a1").value;
+          let w = document.getElementById("a2").value;
+          let x = document.getElementById("a3").value;
+          let y = document.getElementById("a4").value;
+          let zz = document.getElementById("a5").value;
+    
+          a.push(v);
+          b.push(w);
+          c.push(x);
+          d.push(y);
+          e.push(zz);
+    
+          let h = "";
+    
+          for (let i = 0; i < a.length; i++) {
+            h = "<div class='bb'><p>Name: " + c[i] + "</p>" +
 
-    <script>
-        let a=[];
-        let b=[];
-        function touch(){
-          let v=document.getElementById("a1").value;
-          let w=document.getElementById("a2").value;
-            
-            a.push(v);
-            b.push(w);
+                 "<p>Mobile: " + d[i] + "</p>" +
 
-            let c=""
-            
-              
-              
-            for (let i=0;i<a.length;i++){
-           
-            c=c+"<div class='aa'><div class='all'><p>"+a[i]+"</p>";
-             
-              
-              
-                c=c+"<img src='"+b[i]+"'></div></div>"
+                 "<p>Address: " + e[i] + "</p>" +
 
-                
-            }
-          console.log(c);
-           document.getElementById("z5").innerHTML=c;
+                 "<p>Text: " + a[i] + "</p>" +
 
-                
+                 "<img src='" + b[i] + "'></div>";
+          }
+    
+          document.getElementById("z5").innerHTML = h;
+
+          document.getElementById("a1").value = "";
+    document.getElementById("a2").value = "";
+    document.getElementById("a3").value = "";
+    document.getElementById("a4").value = "";
+    document.getElementById("a5").value = "";
+     
+    document.getElementById("z5").style.display="block";
         }
 
 
-
-    </script>
-</html>
+      </script>
+    
+     
+    
+    </body>
+    </html>
